@@ -15,7 +15,7 @@
       color: white;
     }
     .logo {
-      max-width: 300px; /* Logo più grande */
+      max-width: 220px; /* Logo leggermente più piccolo */
       border-radius: 0; /* Logo quadrato */
       margin: 0 auto 2rem;
       display: block;
@@ -45,15 +45,30 @@
       height: 24px;
       margin-right: 12px;
     }
+    .info-text {
+      margin-top: 2rem; /* più spazio sopra */
+      font-size: 1rem;
+      color: black; /* testo nero */
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .info-text a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .info-text a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <!-- Logo -->
   <img src="logo.png" alt="Logo Mortati" class="logo" />
 
-  <!-- Bottone Google Recensioni -->
-  <a class="link-button" href="https://tinyurl.com/rs9vy9xv" target="_blank" rel="noopener noreferrer">
-    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google" />
+  <!-- Bottone Tripadvisor Recensioni -->
+  <a class="link-button" href="https://tinyurl.com/yxhjebw9" target="_blank" rel="noopener noreferrer">
+    <img class="icon" src="https://cdn-icons-png.flaticon.com/128/5968/5968917.png" alt="Tripadvisor" />
     Lasciaci una Recensione
   </a>
 
@@ -67,6 +82,12 @@
   <div class="link-button" id="facebookButton" role="button" tabindex="0">
     <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
     Seguici su Facebook
+  </div>
+
+  <!-- Testo sotto al bottone Facebook -->
+  <div class="info-text">
+    Braceria Ristorante - Macelleria Salumeria - Azienda Agricola <br>
+    Telefono: <a href="tel:3932092990">393 209 2990</a>
   </div>
 
   <script>
