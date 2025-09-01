@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, black, white);
+      background: linear-gradient(to bottom, #4CAF50, white); /* verde → bianco */
       background-attachment: fixed; /* resta fisso durante lo scroll */
       text-align: center;
       padding: 2rem;
@@ -94,10 +94,7 @@
     // Funzione generica per tentare apertura app + fallback web
     function openAppOrWeb(appUrl, webUrl) {
       const start = Date.now();
-      // Prova ad aprire l'app
       window.location = appUrl;
-
-      // Dopo 1 secondo controlla se l'app non si è aperta (semplice fallback)
       setTimeout(function() {
         if (Date.now() - start < 1500) {
           window.open(webUrl, '_blank');
