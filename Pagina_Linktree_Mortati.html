@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mortati - Link Page</title>
   <style>
+    @import url('https://fonts.cdnfonts.com/css/voice-in-my-head'); /* font maiuscolo */
+    @import url('https://fonts.cdnfonts.com/css/script-mt-bold');  /* font corsivo */
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #4CAF50, white); /* verde → bianco */
-      background-attachment: fixed; /* resta fisso durante lo scroll */
+      background-color: black;
       text-align: center;
       padding: 2rem;
       color: white;
     }
     .logo {
-      max-width: 220px; /* Logo leggermente più piccolo */
-      border-radius: 0; /* Logo quadrato */
+      max-width: 220px;
+      border-radius: 0;
       margin: 0 auto 2rem;
       display: block;
     }
@@ -45,20 +47,78 @@
       height: 24px;
       margin-right: 12px;
     }
+
+    /* Sezione informazioni */
     .info-text {
-      margin-top: 2rem; /* più spazio sopra */
+      margin-top: 2rem;
       font-size: 1rem;
-      color: black; /* testo nero */
-      font-weight: 500;
-      line-height: 1.5;
+      line-height: 1.6;
+      color: #CCFF33; /* verde-giallo evidenziatore */
+      font-weight: bold;
+      text-align: right;
     }
-    .info-text a {
+    .info-text .maiuscolo {
+      font-family: 'Voice In My Head', sans-serif;
+      display: block;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .info-text .corsivo {
+      font-family: 'Script MT Bold', cursive;
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Sfondo evidenziatore per tutta l'area sottostante la linea */
+    .highlight-background {
+      background-color: #BFFF33; /* verde-giallo evidenziatore più verdino */
+      width: 100%;
+      padding: 1.5rem 2rem;
+      box-sizing: border-box;
+    }
+
+    /* Linea divisoria dello stesso colore dello sfondo */
+    .divider {
+      border-top: 2px solid #BFFF33;
+      margin: 0;
+      width: 100%;
+    }
+
+    /* Numeri di telefono */
+    .phone {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-weight: bold;
+      color: black;
+    }
+    .phone img {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.5rem;
+    }
+    .phone a {
       color: black;
       text-decoration: none;
       font-weight: bold;
     }
-    .info-text a:hover {
+    .phone a:hover {
       text-decoration: underline;
+    }
+
+    /* Responsività per mobile */
+    @media (max-width: 480px) {
+      .link-button {
+        width: 100%;
+      }
+      .highlight-background {
+        padding: 1rem;
+      }
+      .phone {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
@@ -74,13 +134,13 @@
 
   <!-- Bottone Carta Dei Vini -->
   <a class="link-button" href="" target="_blank">
-    <img class="icon" src="https://cdn-icons-png.flaticon.com/128/2309/2309442.png" alt="Menu" />
+    <img class="icon" src="https://cdn-icons-png.flaticon.com/128/2309/2309442.png" alt="Vino" />
     Carta dei Vini
   </a>
 
-  <!-- Bottone Tripadvisor Recensioni -->
-  <a class="link-button" href="https://tinyurl.com/yxhjebw9" target="_blank" rel="noopener noreferrer">
-    <img class="icon" src="https://cdn-icons-png.flaticon.com/128/5968/5968917.png" alt="Tripadvisor" />
+  <!-- Bottone Google Recensioni -->
+  <a class="link-button" href="https://tinyurl.com/msez2j82" target="_blank" rel="noopener noreferrer">
+    <img class="icon" src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Google" />
     Lasciaci una Recensione
   </a>
 
@@ -90,20 +150,32 @@
     Seguici su Instagram
   </div>
 
-  <!-- Bottone Facebook -->
-  <div class="link-button" id="facebookButton" role="button" tabindex="0">
-    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
-    Seguici su Facebook
+  <!-- Sezione informazioni allineate a destra -->
+  <div class="info-text">
+    <span class="maiuscolo">MACELLERIA SALUMERIA</span>
+    <span class="corsivo">Viale delle Querce - Castrovillari (CS)</span>
+
+    <span class="maiuscolo">RISTORANTE BRACERIA</span>
+    <span class="corsivo">Via Padre Francesco Russo - Castrovillari (CS)</span>
+
+    <span class="maiuscolo">AZIENDA AGRICOLA</span>
+    <span class="corsivo">C.da Serricelle - Civita (CS)</span>
   </div>
 
-  <!-- Testo sotto al bottone Facebook -->
-  <div class="info-text">
-    Braceria Ristorante - Macelleria Salumeria - Azienda Agricola <br>
-    Telefono: <a href="tel:3932092990">393 2092990</a>
+  <!-- Linea divisoria -->
+  <div class="divider"></div>
+
+  <!-- Sfondo giallo-verde per tutta l'area sottostante la linea -->
+  <div class="highlight-background">
+    <div class="phone">
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Telefono" />
+        <a href="tel:3932092990">393 2092990</a> - <a href="tel:3392679502">339 2679502</a>
+      </div>
+    </div>
   </div>
 
   <script>
-    // Funzione generica per tentare apertura app + fallback web
     function openAppOrWeb(appUrl, webUrl) {
       const start = Date.now();
       window.location = appUrl;
@@ -113,10 +185,6 @@
         }
       }, 1000);
     }
-
-    document.getElementById('facebookButton').addEventListener('click', function () {
-      openAppOrWeb('fb://page/100063470203013', 'https://www.facebook.com/MacelleriasalumeriaMortatiElisabetta');
-    });
 
     document.getElementById('instagramButton').addEventListener('click', function () {
       openAppOrWeb('instagram://user?username=mortati_dal1987', 'https://www.instagram.com/mortati_dal1987/');
