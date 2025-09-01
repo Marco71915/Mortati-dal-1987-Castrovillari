@@ -11,27 +11,26 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #231f20; /* sfondo scuro quasi nero */
+      background-color: #231f20; /* sfondo definitivo */
       text-align: center;
       padding: 2rem;
       color: white;
     }
 
-    /* Logo senza bordi, sfondo trasparente */
     .logo {
       max-width: 220px;
-      border-radius: 0;  /* nessun arrotondamento */
       margin: 0 auto 2rem;
       display: block;
-      border: none;      /* rimuove eventuali bordi */
-      box-shadow: none;  /* rimuove eventuali ombre */
-      background: transparent; /* sicurezza: trasparente */
+      border: none;
+      box-shadow: none;
+      background-color: #231f20; /* fusione con lo sfondo */
     }
 
+    /* Centriamo tutti i bottoni */
     .link-button {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: center; /* centratura orizzontale */
       background: white;
       border-radius: 12px;
       padding: 1rem;
@@ -45,9 +44,11 @@
       transition: transform 0.2s ease, background 0.2s ease;
       cursor: pointer;
     }
+
     .link-button:hover {
       transform: scale(1.03);
     }
+
     .icon {
       width: 24px;
       height: 24px;
@@ -61,30 +62,32 @@
       line-height: 1.6;
       color: #CCFF33; /* verde-giallo evidenziatore */
       font-weight: bold;
-      text-align: right;
+      text-align: center; /* informazioni centrali */
     }
+
     .info-text .maiuscolo {
       font-family: 'Voice In My Head', sans-serif;
       display: block;
       font-size: 1.2rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
+
     .info-text .corsivo {
       font-family: 'Script MT Bold', cursive;
       display: block;
       font-size: 1rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     /* Sfondo evidenziatore per tutta l'area sottostante la linea */
     .highlight-background {
       background-color: #BFFF33; /* verde-giallo evidenziatore più verdino */
       width: 100%;
-      padding: 1.5rem 2rem;
+      padding: 2rem;
       box-sizing: border-box;
     }
 
-    /* Linea divisoria dello stesso colore dello sfondo */
+    /* Linea divisoria dello stesso colore dello sfondo evidenziatore */
     .divider {
       border-top: 2px solid #BFFF33;
       margin: 0;
@@ -95,21 +98,24 @@
     .phone {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
+      align-items: center;
+      gap: 1rem;
       font-weight: bold;
       color: black;
     }
-    .phone img {
-      width: 20px;
-      height: 20px;
-      margin-right: 0.5rem;
+
+    .phone div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+
     .phone a {
       color: black;
       text-decoration: none;
       font-weight: bold;
     }
+
     .phone a:hover {
       text-decoration: underline;
     }
@@ -129,7 +135,7 @@
   </style>
 </head>
 <body>
-  <!-- Logo senza contorno -->
+  <!-- Logo -->
   <img src="logo.png" alt="Logo Mortati" class="logo" />
 
   <!-- Bottone Menù -->
@@ -162,7 +168,7 @@
     Seguici su Instagram
   </div>
 
-  <!-- Sezione informazioni allineate a destra -->
+  <!-- Sezione informazioni centrata -->
   <div class="info-text">
     <span class="maiuscolo">MACELLERIA SALUMERIA</span>
     <span class="corsivo">Viale delle Querce - Castrovillari (CS)</span>
@@ -177,12 +183,16 @@
   <!-- Linea divisoria -->
   <div class="divider"></div>
 
-  <!-- Sfondo giallo-verde per tutta l'area sottostante la linea -->
+  <!-- Sfondo evidenziatore per tutta l'area sottostante la linea -->
   <div class="highlight-background">
     <div class="phone">
-      <div style="display:flex; align-items:center; gap:0.5rem;">
+      <div>
         <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Telefono" />
         <a href="tel:3932092990">393 2092990</a>
+      </div>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Telefono" />
+        <a href="tel:3392679502">339 2679502</a>
       </div>
     </div>
   </div>
