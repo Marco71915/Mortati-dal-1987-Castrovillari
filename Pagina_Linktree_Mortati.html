@@ -74,8 +74,8 @@
       font-weight: bold;
       text-align: right;
       padding: 0 2rem;
-      -webkit-touch-callout: none; /* disabilita callout su iOS */
-      -webkit-user-select: none;   /* evita selezione testo */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
     }
     .info-text .maiuscolo {
       font-family: 'Voice In My Head', sans-serif;
@@ -100,8 +100,8 @@
     /* Contatti */
     .contact-column {
       display: flex;
-      flex-direction: column; /* numero sopra, Instagram sotto */
-      align-items: flex-start; /* allineamento a sinistra */
+      flex-direction: column; /* numero sopra */
+      align-items: flex-start;
       width: 100%;
       max-width: 500px;
       margin: 1.5rem auto 2rem;
@@ -121,26 +121,24 @@
       text-decoration: underline;
     }
 
-    .instagram {
-      margin-top: 0.5rem;
-      width: 100%;
-      text-align: left; /* allineato a sinistra */
-    }
-
-    .instagram a {
-      color: #BFFF33;
+    /* Nuovo elemento Instagram sotto il menu */
+    .instagram-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       text-decoration: none;
-      font-family: 'Script MT Bold', cursive;
-      font-size: 1.2rem;
-      line-height: 1.4;
-    }
-    .instagram a:hover {
-      text-decoration: underline;
+      color: black;
+      font-weight: normal;
+      text-transform: uppercase;
+      border-bottom: 2px solid #ccc;
+      background: white; /* inizia sempre con bianco dopo DESSERT */
+      margin-bottom: 2rem;
     }
 
     /* Responsività */
     @media (max-width: 480px) {
-      .menu-item {
+      .menu-item, .instagram-item {
         padding-left: 1rem;
         padding-right: 1rem;
       }
@@ -173,6 +171,11 @@
     <a class="menu-item" href="" target="_blank">
       DESSERT <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
     </a>
+
+    <!-- Nuovo bottone Instagram -->
+    <a class="instagram-item" href="https://www.instagram.com/mortati_dal1987/" target="_blank">
+      SEGUICI SU INSTAGRAM <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </a>
   </div>
 
   <!-- Info -->
@@ -190,13 +193,10 @@
   <!-- Linea divisoria verde -->
   <div class="divider"></div>
 
-  <!-- Contatti + Instagram sotto il numero, entrambi a sinistra -->
+  <!-- Contatti -->
   <div class="contact-column">
     <div class="phone">
       <a href="tel:3932092990">393 2092990</a>
-    </div>
-    <div class="instagram">
-      <a href="https://www.instagram.com/mortati_dal1987/" target="_blank">@mortati_dal1987</a>
     </div>
   </div>
 </body>
