@@ -8,19 +8,23 @@
     @import url('https://fonts.cdnfonts.com/css/voice-in-my-head'); /* font maiuscolo */
     @import url('https://fonts.cdnfonts.com/css/script-mt-bold');  /* font corsivo */
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #231f20;
       text-align: center;
-      padding: 2rem;
+      padding: 0;
       color: white;
     }
 
     /* Logo */
     .logo {
       max-width: 220px;
-      margin: 0 auto 2rem;
+      margin: 2rem auto;
       display: block;
     }
 
@@ -34,12 +38,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem; /* padding laterale per il testo */
+      padding: 1rem 0;
       text-decoration: none;
       color: black;
       font-weight: normal;
       text-transform: uppercase;
-      border-bottom: 2px solid #ccc; /* linea divisoria a tutta larghezza */
+      border-bottom: 2px solid #ccc;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
 
     .menu-item:nth-child(odd) {
@@ -62,6 +68,7 @@
       color: #CCFF33;
       font-weight: bold;
       text-align: right;
+      padding: 0 2rem;
     }
     .info-text .maiuscolo {
       font-family: 'Voice In My Head', sans-serif;
@@ -84,12 +91,14 @@
     }
 
     /* Contatti */
-    .contact-row {
+    .contact-column {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-top: 1.5rem;
+      flex-direction: column; /* numero sopra, Instagram sotto */
+      align-items: flex-start; /* allineamento a sinistra */
       width: 100%;
+      max-width: 500px;
+      margin: 1.5rem auto 2rem;
+      padding: 0 2rem;
     }
 
     .phone a {
@@ -101,6 +110,12 @@
     }
     .phone a:hover {
       text-decoration: underline;
+    }
+
+    .instagram {
+      margin-top: 0.5rem;
+      width: 100%;
+      text-align: left; /* allineato a sinistra */
     }
 
     .instagram a {
@@ -117,11 +132,16 @@
     /* Responsività */
     @media (max-width: 480px) {
       .menu-item {
-        padding: 1rem 1rem; /* meno padding laterale su mobile */
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
-      .contact-row {
-        flex-direction: row;
-        justify-content: space-between;
+      .info-text {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .contact-column {
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
     }
   </style>
@@ -161,8 +181,8 @@
   <!-- Linea divisoria verde -->
   <div class="divider"></div>
 
-  <!-- Contatti + Instagram -->
-  <div class="contact-row">
+  <!-- Contatti + Instagram sotto il numero, entrambi a sinistra -->
+  <div class="contact-column">
     <div class="phone">
       <a href="tel:3932092990">393 2092990</a>
     </div>
