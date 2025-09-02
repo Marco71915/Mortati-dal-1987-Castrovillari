@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mortati - Link Page</title>
+
+  <!-- Disabilita la formattazione automatica di numeri e indirizzi su mobile -->
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="telephone=no">
+
   <style>
     @import url('https://fonts.cdnfonts.com/css/voice-in-my-head'); /* font maiuscolo */
     @import url('https://fonts.cdnfonts.com/css/script-mt-bold');  /* font corsivo */
@@ -69,6 +74,8 @@
       font-weight: bold;
       text-align: right;
       padding: 0 2rem;
+      -webkit-touch-callout: none; /* disabilita callout su iOS */
+      -webkit-user-select: none;   /* evita selezione testo */
     }
     .info-text .maiuscolo {
       font-family: 'Voice In My Head', sans-serif;
@@ -99,6 +106,8 @@
       max-width: 500px;
       margin: 1.5rem auto 2rem;
       padding: 0 2rem;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
     }
 
     .phone a {
