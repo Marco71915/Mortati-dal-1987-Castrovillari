@@ -17,25 +17,34 @@
 
     body {
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
       background-color: #231f20;
       text-align: center;
       color: white;
-      padding: 0;
+      line-height: 1; /* riduce spazio verticale extra */
     }
 
-    /* Logo centrato e margine inferiore ridotto */
-    .logo {
-      width: 350px;       /* dimensione ingrandita */
-      height: auto;       /* mantiene proporzioni */
+    /* Rimuove spazio extra sotto tutte le immagini */
+    img {
+      vertical-align: top;
       display: block;
-      margin: 0.2rem auto 0.1rem auto; /* 0.2rem margine superiore, 0.1rem margine inferiore */
+    }
+
+    /* Logo centrato e margini ridotti */
+    .logo {
+      width: 300px;       /* dimensione ingrandita */
+      height: auto;       /* mantiene proporzioni */
+      margin: 0 auto;     /* centrato orizzontalmente */
+      margin-top: 0;      /* vicino al bordo superiore */
+      margin-bottom: 0;   /* vicino alla lista menù */
     }
 
     /* Lista menu con linee divisorie */
     .menu-list {
       width: 100%;
-      margin: 0 auto 2rem;
+      margin: 0 auto 2rem auto; /* solo margine inferiore */
+      padding: 0;
     }
 
     .menu-item {
