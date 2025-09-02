@@ -11,55 +11,58 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #231f20; /* sfondo scuro quasi nero */
+      background-color: #231f20;
       text-align: center;
       padding: 2rem;
       color: white;
     }
 
-    /* Logo senza bordi, sfondo trasparente */
+    /* Logo */
     .logo {
       max-width: 220px;
-      border-radius: 0;  /* nessun arrotondamento */
       margin: 0 auto 2rem;
       display: block;
-      border: none;      /* rimuove eventuali bordi */
-      box-shadow: none;  /* rimuove eventuali ombre */
-      background: transparent; /* sicurezza: trasparente */
+    }
+
+    /* Contenitore bottoni menù */
+    .menu-buttons {
+      max-width: 400px;
+      margin: 0 auto 2rem;
+      border-radius: 12px;
+      overflow: hidden; /* per attaccare i bottoni */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .link-button {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      background: white;
-      border-radius: 12px;
       padding: 1rem;
-      margin: 1rem auto;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       text-decoration: none;
       color: black;
-      font-weight: bold;
-      transition: transform 0.2s ease, background 0.2s ease;
-      cursor: pointer;
-    }
-    .link-button:hover {
-      transform: scale(1.03);
-    }
-    .icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 12px;
+      font-weight: normal; /* niente grassetto */
+      text-transform: uppercase; /* stampatello */
+      transition: background 0.2s ease;
     }
 
-    /* Sezione informazioni */
+    .link-button:nth-child(odd) {
+      background: white;
+    }
+    .link-button:nth-child(even) {
+      background: #f2f2f2; /* grigio chiaro */
+    }
+
+    .arrow {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Info text */
     .info-text {
       margin-top: 2rem;
       font-size: 1rem;
       line-height: 1.6;
-      color: #CCFF33; /* verde-giallo evidenziatore */
+      color: #CCFF33;
       font-weight: bold;
       text-align: right;
     }
@@ -76,98 +79,76 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Sfondo evidenziatore per tutta l'area sottostante la linea */
-    .highlight-background {
-      background-color: #BFFF33; /* verde-giallo evidenziatore più verdino */
-      width: 100%;
-      padding: 1.5rem 2rem;
-      box-sizing: border-box;
-    }
-
-    /* Linea divisoria dello stesso colore dello sfondo */
+    /* Divider */
     .divider {
       border-top: 2px solid #BFFF33;
-      margin: 0;
+      margin: 2rem 0;
       width: 100%;
     }
 
-    /* Numeri di telefono */
-    .phone {
+    /* Contatti */
+    .contact-row {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-weight: bold;
-      color: black;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
     }
-    .phone img {
-      width: 20px;
-      height: 20px;
-      margin-right: 0.5rem;
-    }
+
     .phone a {
-      color: black;
+      color: #BFFF33;
       text-decoration: none;
-      font-weight: bold;
+      font-family: 'Voice In My Head', sans-serif;
+      font-size: 1.2rem;
     }
     .phone a:hover {
       text-decoration: underline;
     }
 
-    /* Responsività per mobile */
+    .instagram a {
+      color: #BFFF33;
+      text-decoration: none;
+      font-family: 'Script MT Bold', cursive;
+      font-size: 1.2rem;
+    }
+    .instagram a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsività */
     @media (max-width: 480px) {
-      .link-button {
+      .menu-buttons {
         width: 100%;
-        justify-content: center;
-        margin-left: -8px; /* 👈 sposta leggermente i bottoni a sinistra */
       }
-      .link-button .icon {
-        margin-right: 8px;
-      }
-      .highlight-background {
-        padding: 1rem;
-      }
-      .phone {
-        font-size: 0.95rem;
+      .contact-row {
+        flex-direction: column;
+        gap: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Logo senza contorno -->
+  <!-- Logo -->
   <img src="logo.png" alt="Logo Mortati" class="logo" />
 
-  <!-- Bottone Menù -->
-  <a class="link-button" href="" target="_blank">
-    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="Menu" />
-    Menù
-  </a>
-
-  <!-- Bottone Carta Dei Vini -->
-  <a class="link-button" href="" target="_blank">
-    <img class="icon" src="https://cdn-icons-png.flaticon.com/128/2309/2309442.png" alt="Vino" />
-    Carta dei Vini
-  </a>
-
-  <!-- Bottone Carta Amari e Distillati -->
-  <a class="link-button" href="" target="_blank">
-    <img class="icon" src="https://cdn-icons-png.flaticon.com/128/68/68323.png" alt="Vino" />
-    Carta Amari e Distillati
-  </a>
-
-  <!-- Bottone Dessert -->
-  <a class="link-button" href="" target="_blank">
-    <img class="icon" src="https://cdn-icons-png.flaticon.com/128/992/992717.png" alt="Vino" />
-    Dessert
-  </a>
-
-  <!-- Bottone Instagram -->
-  <div class="link-button" id="instagramButton" role="button" tabindex="0">
-    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-    Seguici su Instagram
+  <!-- Bottoni Menù -->
+  <div class="menu-buttons">
+    <a class="link-button" href="" target="_blank">
+      MENÙ <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </a>
+    <a class="link-button" href="" target="_blank">
+      CARTA DEI VINI <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </a>
+    <a class="link-button" href="" target="_blank">
+      CARTA AMARI E DISTILLATI <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </a>
+    <a class="link-button" href="" target="_blank">
+      DESSERT <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </a>
   </div>
 
-  <!-- Sezione informazioni allineate a destra -->
+  <!-- Info -->
   <div class="info-text">
     <span class="maiuscolo">MACELLERIA SALUMERIA</span>
     <span class="corsivo">Viale delle Querce - Castrovillari (CS)</span>
@@ -182,30 +163,14 @@
   <!-- Linea divisoria -->
   <div class="divider"></div>
 
-  <!-- Sfondo giallo-verde per tutta l'area sottostante la linea -->
-  <div class="highlight-background">
+  <!-- Contatti + Instagram -->
+  <div class="contact-row">
     <div class="phone">
-      <div style="display:flex; align-items:center; gap:0.5rem;">
-        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Telefono" />
-        <a href="tel:3932092990">393 2092990</a>
-      </div>
+      <a href="tel:3932092990">393 2092990</a>
+    </div>
+    <div class="instagram">
+      <a href="https://www.instagram.com/mortati_dal1987/" target="_blank">@mortati_dal1987</a>
     </div>
   </div>
-
-  <script>
-    function openAppOrWeb(appUrl, webUrl) {
-      const start = Date.now();
-      window.location = appUrl;
-      setTimeout(function() {
-        if (Date.now() - start < 1500) {
-          window.open(webUrl, '_blank');
-        }
-      }, 1000);
-    }
-
-    document.getElementById('instagramButton').addEventListener('click', function () {
-      openAppOrWeb('instagram://user?username=mortati_dal1987', 'https://www.instagram.com/mortati_dal1987/');
-    });
-  </script>
 </body>
 </html>
