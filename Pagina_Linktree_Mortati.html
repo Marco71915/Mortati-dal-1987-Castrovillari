@@ -5,82 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mortati - Link Page</title>
 
-  <!-- Disabilita la formattazione automatica di numeri e indirizzi su mobile -->
+  <!-- Disabilita formattazioni automatiche su mobile -->
   <meta name="format-detection" content="address=no">
   <meta name="format-detection" content="telephone=no">
 
-  <style>
-    @import url('https://fonts.cdnfonts.com/css/voice-in-my-head'); /* font maiuscolo */
-    @import url('https://fonts.cdnfonts.com/css/script-mt-bold');  /* font corsivo */
+  <!-- Import Quicksand font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 
+  <style>
     * {
       box-sizing: border-box;
     }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #231f20;
       text-align: center;
-      padding: 0;
       color: white;
+      padding: 0;
     }
-
-    /* Logo */
     .logo {
       max-width: 220px;
       margin: 2rem auto;
       display: block;
     }
-
-    /* Lista menù con linee divisorie a tutta pagina */
     .menu-list {
       width: 100%;
       margin: 0 auto 2rem;
     }
-
     .menu-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 0;
       text-decoration: none;
-      color: black;
-      font-weight: normal;
+      color: #ee552b;
+      font-family: 'Quicksand', sans-serif;
       text-transform: uppercase;
       border-bottom: 2px solid #ccc;
       padding-left: 2rem;
       padding-right: 2rem;
     }
-
     .menu-item:nth-child(odd) {
-      background: white;
+      background: #3b2a20;
     }
     .menu-item:nth-child(even) {
-      background: #f2f2f2;
+      background: #5c4033;
     }
-
     .arrow {
       width: 18px;
       height: 18px;
     }
-
-    /* Nuovo bottone Instagram */
-    .instagram-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      text-decoration: none;
-      color: black;
-      font-weight: normal;
-      text-transform: uppercase;
-      border-bottom: 2px solid #ccc;
-      background: white;
-      margin-bottom: 2rem;
-    }
-
-    /* Info text */
     .info-text {
       margin-top: 2rem;
       font-size: 1rem;
@@ -91,6 +66,7 @@
       padding: 0 2rem;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
+      font-family: Arial, sans-serif;
     }
     .info-text .maiuscolo {
       font-family: 'Voice In My Head', sans-serif;
@@ -99,32 +75,27 @@
       margin-top: 0.5rem;
     }
     .info-text .corsivo {
-      font-family: 'Script MT Bold', cursive;
+      font-family: 'Quicksand', sans-serif; /* aggiornato */
       display: block;
       font-size: 1rem;
       margin-bottom: 0.5rem;
     }
-
-    /* Linea divisoria verde */
     .divider {
       border-top: 2px solid #BFFF33;
-      margin: 0; /* margine rimosso per avvicinare il numero */
+      margin: 0;
       width: 100%;
     }
-
-    /* Contatti */
     .contact-column {
       display: flex;
-      flex-direction: column; /* numero sopra */
+      flex-direction: column;
       align-items: flex-start;
       width: 100%;
       max-width: 500px;
-      margin: 0 auto 2rem; /* margine superiore = 0 */
-      padding: 0 2rem; /* solo padding laterale */
+      margin: 0 auto 2rem;
+      padding: 0 2rem;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
     }
-
     .phone a {
       color: #BFFF33;
       text-decoration: none;
@@ -137,10 +108,8 @@
     .phone a:hover {
       text-decoration: underline;
     }
-
-    /* Responsività */
     @media (max-width: 480px) {
-      .menu-item, .instagram-item {
+      .menu-item {
         padding-left: 1rem;
         padding-right: 1rem;
       }
@@ -156,10 +125,8 @@
   </style>
 </head>
 <body>
-  <!-- Logo -->
   <img src="logo.png" alt="Logo Mortati" class="logo" />
 
-  <!-- Voci Menù -->
   <div class="menu-list">
     <a class="menu-item" href="" target="_blank">
       MENÙ <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
@@ -173,14 +140,11 @@
     <a class="menu-item" href="" target="_blank">
       DESSERT <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
     </a>
-
-    <!-- Nuovo bottone Instagram -->
-    <a class="instagram-item" href="https://www.instagram.com/mortati_dal1987/" target="_blank">
+    <a class="menu-item" href="https://www.instagram.com/mortati_dal1987/" target="_blank">
       SEGUICI SU INSTAGRAM <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
     </a>
   </div>
 
-  <!-- Info -->
   <div class="info-text">
     <span class="maiuscolo">MACELLERIA SALUMERIA</span>
     <span class="corsivo">Viale delle Querce - Castrovillari (CS)</span>
@@ -192,10 +156,8 @@
     <span class="corsivo">C.da Serricelle - Civita (CS)</span>
   </div>
 
-  <!-- Linea divisoria verde -->
   <div class="divider"></div>
 
-  <!-- Contatti -->
   <div class="contact-column">
     <div class="phone">
       <a href="tel:3932092990">393 2092990</a>
