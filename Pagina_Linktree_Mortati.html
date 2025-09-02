@@ -76,7 +76,7 @@
       font-weight: normal;
       text-transform: uppercase;
       border-bottom: 2px solid #ccc;
-      background: white; /* inizia sempre con bianco dopo DESSERT */
+      background: white;
       margin-bottom: 2rem;
     }
 
@@ -108,7 +108,7 @@
     /* Linea divisoria verde */
     .divider {
       border-top: 2px solid #BFFF33;
-      margin: 2rem 0;
+      margin: 0; /* margine rimosso per avvicinare il numero */
       width: 100%;
     }
 
@@ -119,8 +119,8 @@
       align-items: flex-start;
       width: 100%;
       max-width: 500px;
-      margin: 0.5rem auto 2rem; /* ridotto margine superiore da 1.5rem a 0.5rem */
-      padding: 0 2rem;
+      margin: 0 auto 2rem; /* margine superiore = 0 */
+      padding: 0 2rem; /* solo padding laterale */
       -webkit-touch-callout: none;
       -webkit-user-select: none;
     }
@@ -131,6 +131,8 @@
       font-family: 'Voice In My Head', sans-serif;
       font-size: 1.2rem;
       line-height: 1.4;
+      margin: 0;
+      padding: 0;
     }
     .phone a:hover {
       text-decoration: underline;
