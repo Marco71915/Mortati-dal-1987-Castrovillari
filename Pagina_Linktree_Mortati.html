@@ -24,32 +24,38 @@
       display: block;
     }
 
-    /* Contenitore bottoni menù */
-    .menu-buttons {
+    /* Lista menù */
+    .menu-list {
+      width: 100%;
       max-width: 400px;
       margin: 0 auto 2rem;
-      border-radius: 12px;
-      overflow: hidden; /* per attaccare i bottoni */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
-    .link-button {
+    .menu-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem;
       text-decoration: none;
       color: black;
-      font-weight: normal; /* niente grassetto */
-      text-transform: uppercase; /* stampatello */
-      transition: background 0.2s ease;
+      font-weight: normal;
+      text-transform: uppercase;
+      border-top: 2px solid #ccc;
     }
 
-    .link-button:nth-child(odd) {
+    .menu-item:first-child {
+      border-top: none; /* nessuna linea sopra il primo */
+    }
+
+    .menu-item:last-child {
+      border-bottom: none; /* nessuna linea sotto l'ultimo */
+    }
+
+    .menu-item:nth-child(odd) {
       background: white;
     }
-    .link-button:nth-child(even) {
-      background: #f2f2f2; /* grigio chiaro */
+    .menu-item:nth-child(even) {
+      background: #f2f2f2;
     }
 
     .arrow {
@@ -89,11 +95,13 @@
     /* Contatti */
     .contact-row {
       display: flex;
-      justify-content: center;
+      justify-content: space-between; /* telefono a sinistra, instagram a destra */
       align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
       margin-top: 1.5rem;
+      width: 100%;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .phone a {
@@ -118,12 +126,12 @@
 
     /* Responsività */
     @media (max-width: 480px) {
-      .menu-buttons {
+      .menu-list {
         width: 100%;
       }
       .contact-row {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        justify-content: space-between; /* mantiene sinistra-destra anche su mobile */
       }
     }
   </style>
@@ -132,18 +140,18 @@
   <!-- Logo -->
   <img src="logo.png" alt="Logo Mortati" class="logo" />
 
-  <!-- Bottoni Menù -->
-  <div class="menu-buttons">
-    <a class="link-button" href="" target="_blank">
+  <!-- Voci Menù -->
+  <div class="menu-list">
+    <a class="menu-item" href="" target="_blank">
       MENÙ <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
     </a>
-    <a class="link-button" href="" target="_blank">
+    <a class="menu-item" href="" target="_blank">
       CARTA DEI VINI <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
     </a>
-    <a class="link-button" href="" target="_blank">
+    <a class="menu-item" href="" target="_blank">
       CARTA AMARI E DISTILLATI <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
     </a>
-    <a class="link-button" href="" target="_blank">
+    <a class="menu-item" href="" target="_blank">
       DESSERT <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
     </a>
   </div>
