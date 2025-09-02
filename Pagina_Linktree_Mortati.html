@@ -8,10 +8,13 @@
   <meta name="format-detection" content="address=no">
   <meta name="format-detection" content="telephone=no">
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/voice-in-my-head" rel="stylesheet">
 
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -20,15 +23,19 @@
       color: white;
       padding: 0;
     }
+
     .logo {
       max-width: 220px;
       margin: 2rem auto;
       display: block;
     }
+
+    /* Lista menu con linee divisorie */
     .menu-list {
       width: 100%;
       margin: 0 auto 2rem;
     }
+
     .menu-item {
       display: flex;
       justify-content: space-between;
@@ -42,8 +49,10 @@
       padding-left: 2rem;
       padding-right: 2rem;
     }
+
     .menu-item:nth-child(odd) { background: #3b2a20; }
     .menu-item:nth-child(even) { background: #5c4033; }
+
     .arrow { width: 18px; height: 18px; }
 
     .info-text {
@@ -52,18 +61,19 @@
       line-height: 1.6;
       color: #CCFF33;
       font-weight: bold;
-      text-align: center; /* centrato */
+      text-align: center;
       padding: 0 2rem;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
-      font-family: Arial, sans-serif;
     }
+
     .info-text .maiuscolo {
       font-family: 'Voice In My Head', sans-serif;
       display: block;
       font-size: 1.2rem;
       margin-top: 0.5rem;
     }
+
     .info-text .corsivo {
       font-family: 'Quicksand', sans-serif;
       display: block;
@@ -80,23 +90,30 @@
     .contact-column {
       display: flex;
       flex-direction: column;
-      align-items: center; /* centrato */
+      align-items: center; 
       width: 100%;
       max-width: 500px;
       margin: 0 auto 2rem;
-      padding: 0 2rem;
+      padding: 0.5rem 2rem 2rem 2rem; 
       -webkit-touch-callout: none;
       -webkit-user-select: none;
     }
+
     .phone a {
       color: #BFFF33;
       text-decoration: none;
-      font-family: 'Voice In My Head', sans-serif;
       font-size: 1.2rem;
       line-height: 1.4;
-      margin: 0;
-      padding: 0;
     }
+
+    .phone a .tel-label {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .phone a .tel-number {
+      font-family: 'Voice In My Head', sans-serif;
+    }
+
     .phone a:hover { text-decoration: underline; }
 
     @media (max-width: 480px) {
@@ -107,8 +124,10 @@
   </style>
 </head>
 <body>
+  <!-- Logo -->
   <img src="logo.png" alt="Logo Mortati" class="logo" />
 
+  <!-- Voci Menù -->
   <div class="menu-list">
     <a class="menu-item" href="" target="_blank">
       MENÙ <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
@@ -127,6 +146,7 @@
     </a>
   </div>
 
+  <!-- Info -->
   <div class="info-text">
     <span class="maiuscolo">MACELLERIA SALUMERIA</span>
     <span class="corsivo">Viale delle Querce - Castrovillari&nbsp;(CS)</span>
@@ -138,11 +158,15 @@
     <span class="corsivo">C.da Serricelle - Civita&nbsp;(CS)</span>
   </div>
 
+  <!-- Linea divisoria verde -->
   <div class="divider"></div>
 
+  <!-- Numero di telefono -->
   <div class="contact-column">
     <div class="phone">
-      <a href="tel:3932092990">393 2092990</a>
+      <a href="tel:3932092990">
+        <span class="tel-label">Tel.:</span> <span class="tel-number">393 2092990</span>
+      </a>
     </div>
   </div>
 </body>
