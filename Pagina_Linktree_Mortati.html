@@ -20,7 +20,7 @@
       padding: 0;
       font-family: Arial, sans-serif;
       background: url("sfondo.png") no-repeat center center fixed;
-      background-size: cover; /* adatta l'immagine allo schermo senza deformarla */
+      background-size: cover;
       text-align: center;
       color: white;
       line-height: 1;
@@ -45,19 +45,22 @@
       padding: 0;
     }
 
+    /* Menu voci sfondo alternato */
+    .menu-item:nth-child(1) { background-color: #bc9c22; color: black; }
+    .menu-item:nth-child(2) { background-color: #e1c340; color: black; }
+    .menu-item:nth-child(3) { background-color: #bc9c22; color: black; }
+    .menu-item:nth-child(4) { background-color: #e1c340; color: black; }
+    .menu-item:nth-child(5) { background-color: #bc9c22; color: black; }
+
     .menu-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0;
+      padding: 1rem 2rem;
       text-decoration: none;
-      color: #ee552b;
       font-family: 'Quicksand', sans-serif;
       text-transform: uppercase;
       border-bottom: 2px solid #ccc;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      background: rgba(0, 0, 0, 0.5); /* migliora leggibilità sullo sfondo */
     }
 
     .arrow { width: 18px; height: 18px; }
