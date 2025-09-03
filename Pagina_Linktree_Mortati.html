@@ -18,13 +18,11 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       min-height: 100%;
       font-family: Arial, sans-serif;
-      background: url("sfondo.png") no-repeat center center;
+      background: url("sfondo.png") repeat-y center top;
       background-size: cover;
-      background-attachment: scroll; /* compatibile con iOS */
-      background-color: black;
+      background-color: black; /* fallback */
       text-align: center;
       color: white;
       line-height: 1;
@@ -65,7 +63,7 @@
       font-family: 'Quicksand', sans-serif;
       text-transform: uppercase;
       border-bottom: 2px solid #ccc;
-      /* tolta l’ombra */
+      box-shadow: none; /* tolta qualsiasi ombra */
     }
 
     .arrow { width: 18px; height: 18px; }
@@ -147,7 +145,15 @@
     <a class="menu-item" href="" target="_blank">CARTA DEI VINI <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">"></a>
     <a class="menu-item" href="" target="_blank">CARTA AMARI E DISTILLATI <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">"></a>
     <a class="menu-item" href="" target="_blank">DESSERT <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">"></a>
-    <a class="menu-item" href="https://www.instagram.com/mortati_dal1987/" target="_blank">SEGUICI SU INSTAGRAM <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">"></a>
+
+    <!-- Instagram link con apertura app o browser -->
+    <a class="menu-item" 
+       href="instagram://user?username=mortati_dal1987" 
+       onclick="window.location='https://www.instagram.com/mortati_dal1987/'" 
+       target="_blank">
+       SEGUICI SU INSTAGRAM 
+       <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </a>
   </div>
 
   <!-- Info -->
