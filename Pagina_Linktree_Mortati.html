@@ -20,12 +20,17 @@
       padding: 0;
       min-height: 100%;
       font-family: Arial, sans-serif;
-      background: url("sfondo.png") repeat-y center top;
-      background-size: cover;
+      background: url("sfondo.png") no-repeat center top;
+      background-size: cover; /* si adatta sempre allo schermo */
+      background-attachment: scroll; /* migliore compatibilità con iPhone */
       background-color: black; /* fallback */
       text-align: center;
       color: white;
       line-height: 1;
+    }
+
+    body {
+      min-height: 120vh; /* allunga lo sfondo rispetto all’altezza dello schermo */
     }
 
     img {
@@ -37,8 +42,6 @@
       width: 300px;
       height: auto;
       margin: 0 auto;
-      margin-top: 0;
-      margin-bottom: 0;
     }
 
     .menu-list {
@@ -63,7 +66,7 @@
       font-family: 'Quicksand', sans-serif;
       text-transform: uppercase;
       border-bottom: 2px solid #ccc;
-      box-shadow: none; /* tolta qualsiasi ombra */
+      box-shadow: none;
     }
 
     .arrow { width: 18px; height: 18px; }
