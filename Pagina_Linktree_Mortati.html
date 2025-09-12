@@ -67,6 +67,7 @@
       text-transform: uppercase;
       border-bottom: 2px solid #ccc;
       box-shadow: none;
+      cursor: pointer;
     }
 
     .arrow { width: 18px; height: 18px; }
@@ -144,22 +145,27 @@
 
   <!-- Voci Menù -->
   <div class="menu-list">
-    <a class="menu-item" href="https://www.canva.com/design/DAGxw_hoptA/kJLj5LeFP2P4l5nC5vWaZw/view?     	 	utm_content=DAGxw_hoptA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h38ffa59aae" target="_blank">MENÙ <img class="arrow" 	src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">"></a>
-    
-    <a class="menu-item" href="https://www.canva.com/design/DAGyqE1jDRc/Wc8YFA1dRspyzr1IGjSb2g/view?utm_content=DAGyqE1jDRc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7c9856d513" target="_blank">CARTA DEI VINI <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">     	</a>
-    
-    <a class="menu-item" href="https://www.canva.com/design/DAGx3AwsbVc/6FK_kJmhYT_CVYGr0F8_Gg/view?	utm_content=DAGx3AwsbVc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h35a4fd8e03" target="_blank">CARTA AMARI E DISTILLATI 	<img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">"></a>
-    
-    <a class="menu-item" href="https://www.canva.com/design/DAGx7A6HdjY/GH3WSUS0q2pCILRBycYDTQ/view?	utm_content=DAGx7A6HdjY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4b367b0f4a" target="_blank">DESSERT <img 	class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">"></a>
-
-    <!-- Instagram link con apertura app o browser -->
-    <a class="menu-item" 
-       href="instagram://user?username=mortati_dal1987" 
-       onclick="window.location='https://www.instagram.com/mortati_dal1987/'" 
-       target="_blank">
-       SEGUICI SU INSTAGRAM 
-       <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    <a class="menu-item" href="https://www.canva.com/design/DAGxw_hoptA/kJLj5LeFP2P4l5nC5vWaZw/view?utm_content=DAGxw_hoptA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h38ffa59aae" target="_blank">
+      MENÙ <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
     </a>
+    
+    <a class="menu-item" href="https://www.canva.com/design/DAGyqE1jDRc/Wc8YFA1dRspyzr1IGjSb2g/view?utm_content=DAGyqE1jDRc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7c9856d513" target="_blank">
+      CARTA DEI VINI <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </a>
+    
+    <a class="menu-item" href="https://www.canva.com/design/DAGx3AwsbVc/6FK_kJmhYT_CVYGr0F8_Gg/view?utm_content=DAGx3AwsbVc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h35a4fd8e03" target="_blank">
+      CARTA AMARI E DISTILLATI <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </a>
+    
+    <a class="menu-item" href="https://www.canva.com/design/DAGx7A6HdjY/GH3WSUS0q2pCILRBycYDTQ/view?utm_content=DAGx7A6HdjY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4b367b0f4a" target="_blank">
+      DESSERT <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </a>
+
+    <!-- Instagram con fallback -->
+    <div class="menu-item" id="instagramButton" role="button" tabindex="0">
+      SEGUICI SU INSTAGRAM
+      <img class="arrow" src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" alt=">">
+    </div>
   </div>
 
   <!-- Info -->
@@ -185,7 +191,22 @@
       </a>
     </div>
   </div>
+
+  <!-- Script per fallback Instagram -->
+  <script>
+    document.getElementById('instagramButton').addEventListener('click', function () {
+      openAppOrWeb('instagram://user?username=mortati_dal1987', 'https://www.instagram.com/mortati_dal1987/');
+    });
+
+    function openAppOrWeb(appUrl, webUrl) {
+      const start = Date.now();
+      window.location = appUrl;
+      setTimeout(function() {
+        if (Date.now() - start < 1500) {
+          window.open(webUrl, '_blank');
+        }
+      }, 1000);
+    }
+  </script>
 </body>
 </html>
-
-
